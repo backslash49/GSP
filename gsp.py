@@ -1,14 +1,15 @@
-
-#this function accepts a directory as an argumentand returns the absolute paths of any
-#files formated like this: asdf__asdfa__.asd
-
 import sys
 import re
 import os
 import shutil
 import commands
 
-def gsp(dir):
+def get_special_paths(dir):
+    
+#this function accepts a directory as an argumentand returns the absolute paths of any
+#files formated like this: asdf__asdfa__.asd
+
+
     #creates list of files in parent directory
     files = os.listdir(dir)
 
@@ -21,5 +22,17 @@ def gsp(dir):
     #invokes for loop to print absolute path for each 'special' file
     for files in specialfiles:
         paths = os.path.abspath(files)
-        print paths
+        return paths
+
+def copy_to(files, directory):
+    shutil.copy(files, directory)
+
+
+#for files in paths:
+#    copy_to(files, '/Users/Lauren')
+
+def main(directoryname):
+    get_special_paths(directoryname)
+
+    
 

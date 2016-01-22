@@ -4,9 +4,10 @@ import re
 import os
 import shutil
 import commands
-import a
+import gsp
 
+#requests directory as input and runs the gsp function on the dir
 
 directory = input('What Directory: ')
 
-a.gsp(directory)    
+gsp.get_special_directory(directory)    
